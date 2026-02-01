@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apply for the 30-Day Seller Advantage Program">
+    <title>Apply Now | 30-Day Seller Advantage Program</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .header {
+            background: #000033;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .header-logo {
+            height: 40px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #000033 0%, #1a1a4d 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 44px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            color: #ccc;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Progress Bar */
+        .progress-container {
+            background: white;
+            padding: 30px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .progress-bar {
+            display: flex;
+            justify-content: space-between;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .progress-bar::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #e9ecef;
+            z-index: 0;
+        }
+        
+        .progress-step {
+            text-align: center;
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .progress-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #e9ecef;
+            color: #999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+        
+        .progress-step.active .progress-circle {
+            background: #C5A059;
+            color: white;
+        }
+        
+        .progress-step.completed .progress-circle {
+            background: #28a745;
+            color: white;
+        }
+        
+        .progress-label {
+            font-size: 12px;
+            color: #999;
+        }
+        
+        .progress-step.active .progress-label {
+            color: #C5A059;
+            font-weight: 700;
+        }
+        
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Form Section */
+        .form-section {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .form-step {
+            display: none;
+        }
+        
+        .form-step.active {
+            display: block;
+        }
+        
+        .step-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            color: #000033;
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-label {
+            display: block;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+        
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 14px 18px;
+            font-size: 16px;
+            border: 2px solid #e9ecef;
+            border-radius: 5px;
+            font-family: 'Lato', sans-serif;
+            transition: border-color 0.3s;
+        }
+        
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: #C5A059;
+        }
+        
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .radio-option:hover {
+            border-color: #C5A059;
+            background: #f8f9fa;
+        }
+        
+        .radio-option input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        
+        .form-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+        
+        .btn {
+            padding: 16px 40px;
+            font-size: 18px;
+            font-weight: 700;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-next {
+            background: linear-gradient(135deg, #C5A059 0%, #d4af6a 100%);
+            color: white;
+            box-shadow: 0 5px 15px rgba(197, 160, 89, 0.3);
+        }
+        
+        .btn-next:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(197, 160, 89, 0.4);
+        }
+        
+        .btn-back {
+            background: #e9ecef;
+            color: #333;
+        }
+        
+        .btn-back:hover {
+            background: #d4d7da;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .checkbox-group input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-top: 2px;
+            cursor: pointer;
+        }
+        
+        .checkbox-label {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 20px;
+            height: fit-content;
+        }
+        
+        .sidebar-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .sidebar-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: #000033;
+            margin-bottom: 20px;
+        }
+        
+        .sidebar-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .sidebar-step {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .sidebar-icon {
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+        
+        .sidebar-step-content h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #000033;
+            margin-bottom: 5px;
+        }
+        
+        .sidebar-step-content p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .testimonial-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #C5A059;
+        }
+        
+        .testimonial-stars {
+            color: #FFD700;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        
+        .testimonial-text {
+            font-size: 14px;
+            color: #555;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        
+        .testimonial-author {
+            font-size: 13px;
+            font-weight: 700;
+            color: #000033;
+        }
+        
+        .trust-badges {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+            font-size: 13px;
+            color: #777;
+        }
+        
+        .trust-badge-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 968px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                position: static;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .progress-bar {
+                flex-wrap: wrap;
+            }
+            
+            .progress-step {
+                flex-basis: 50%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <img src="images/serhantlogo.png" alt="Serhant Logo" class="header-logo">
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Apply for the 30-Day Seller Advantage Program</h1>
+            <p>Answer a few quick questions so we can determine if your home is a fit for our system. This takes less than 3 minutes.</p>
+        </div>
+    </section>
+    
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="container">
+            <div class="progress-bar">
+                <div class="progress-step active" data-step="1">
+                    <div class="progress-circle">1</div>
+                    <div class="progress-label">Property</div>
+                </div>
+                <div class="progress-step" data-step="2">
+                    <div class="progress-circle">2</div>
+                    <div class="progress-label">Timeline</div>
+                </div>
+                <div class="progress-step" data-step="3">
+                    <div class="progress-circle">3</div>
+                    <div class="progress-label">Motivation</div>
+                </div>
+                <div class="progress-step" data-step="4">
+                    <div class="progress-circle">4</div>
+                    <div class="progress-label">Contact</div>
+                </div>
+                <div class="progress-step" data-step="5">
+                    <div class="progress-circle">5</div>
+                    <div class="progress-label">Confirm</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Form Section -->
+        <div class="form-section">
+            <form id="applicationForm" action="page4-calendar.html" method="GET">
+                
+                <!-- Step 1: Property Details -->
+                <div class="form-step active" data-step="1">
+                    <h2 class="step-title">Tell Us About Your Property</h2>
+                    
+                    <div class="form-group">
+                        <label class="form-label">What is the address of the property you're selling?</label>
+                        <input type="text" name="street" class="form-input" placeholder="Street Address" required>
+                        <input type="text" name="city" class="form-input" placeholder="City" style="margin-top: 10px;" required>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px;">
+                            <select name="state" class="form-select" required>
+                                <option value="NY">NY</option>
+                            </select>
+                            <input type="text" name="zip" class="form-input" placeholder="ZIP Code" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">What type of property is it?</label>
+                        <select name="property_type" class="form-select" required>
+                            <option value="">Select...</option>
+                            <option value="single_family">Single Family Home</option>
+                            <option value="condo">Condo</option>
+                            <option value="townhouse">Townhouse</option>
+                            <option value="multi_family">Multi-Family (2-4 units)</option>
+                            <option value="land">Land</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-group">
+                            <label class="form-label">How many bedrooms?</label>
+                            <select name="bedrooms" class="form-select" required>
+                                <option value="">Select...</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6+">6+</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">How many bathrooms?</label>
+                            <select name="bathrooms" class="form-select" required>
+                                <option value="">Select...</option>
+                                <option value="1">1</option>
+                                <option value="1.5">1.5</option>
+                                <option value="2">2</option>
+                                <option value="2.5">2.5</option>
+                                <option value="3">3</option>
+                                <option value="3.5">3.5</option>
+                                <option value="4+">4+</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-group">
+                            <label class="form-label">Approximate square footage?</label>
+                            <input type="number" name="sqft" class="form-input" placeholder="e.g., 2000" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">What year was the home built?</label>
+                            <input type="number" name="year_built" class="form-input" placeholder="e.g., 1995" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <div></div>
+                        <button type="button" class="btn btn-next" onclick="nextStep()">Next: Timeline</button>
+                    </div>
+                </div>
+                
+                <!-- Step 2: Selling Timeline -->
+                <div class="form-step" data-step="2">
+                    <h2 class="step-title">When Do You Need to Sell?</h2>
+                    
+                    <div class="form-group">
+                        <label class="form-label">When do you need to sell?</label>
+                        <select name="timeline" class="form-select" required>
+                            <option value="">Select...</option>
+                            <option value="30_days">Next 30 days</option>
+                            <option value="30_60_days">30-60 days</option>
+                            <option value="60_90_days">60-90 days</option>
+                            <option value="90_plus_days">90+ days</option>
+                            <option value="exploring">Just exploring options</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Have you listed with another agent before?</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="previous_listing" value="yes" onclick="showConditionalFields()">
+                                <span>Yes</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="previous_listing" value="no" onclick="hideConditionalFields()">
+                                <span>No</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div id="conditionalFields" style="display: none;">
+                        <div class="form-group">
+                            <label class="form-label">If yes, how long was it on the market?</label>
+                            <input type="number" name="days_on_market" class="form-input" placeholder="Number of days">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Why didn't it sell?</label>
+                            <select name="reason_not_sold" class="form-select">
+                                <option value="">Select...</option>
+                                <option value="overpriced">Overpriced</option>
+                                <option value="poor_marketing">Poor marketing</option>
+                                <option value="low_buyer_interest">Low buyer interest</option>
+                                <option value="fell_through_inspections">Fell through during inspections</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <button type="button" class="btn btn-back" onclick="prevStep()">Back</button>
+                        <button type="button" class="btn btn-next" onclick="nextStep()">Next: Motivation</button>
+                    </div>
+                </div>
+                
+                <!-- Step 3: Motivation -->
+                <div class="form-step" data-step="3">
+                    <h2 class="step-title">Help Us Understand Your Goals</h2>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Why are you selling?</label>
+                        <select name="reason_selling" class="form-select" required>
+                            <option value="">Select...</option>
+                            <option value="relocation">Relocation (job, family, etc.)</option>
+                            <option value="downsizing">Downsizing</option>
+                            <option value="upsizing">Upsizing</option>
+                            <option value="investment">Investment property sale</option>
+                            <option value="divorce_estate">Divorce or estate settlement</option>
+                            <option value="financial">Financial reasons</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">What's your biggest concern about selling?</label>
+                        <textarea name="biggest_concern" class="form-textarea" placeholder="e.g., 'I'm worried about pricing it right' or 'I don't want it to sit on the market for months'" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">What would a successful sale look like for you?</label>
+                        <textarea name="ideal_outcome" class="form-textarea" placeholder="e.g., 'Sell within 30 days for top dollar with minimal stress'" required></textarea>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <button type="button" class="btn btn-back" onclick="prevStep()">Back</button>
+                        <button type="button" class="btn btn-next" onclick="nextStep()">Next: Contact Info</button>
+                    </div>
+                </div>
+                
+                <!-- Step 4: Contact Information -->
+                <div class="form-step" data-step="4">
+                    <h2 class="step-title">How Can We Reach You?</h2>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-group">
+                            <label class="form-label">First Name</label>
+                            <input type="text" name="first_name" class="form-input" placeholder="First Name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Last Name</label>
+                            <input type="text" name="last_name" class="form-input" placeholder="Last Name" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" name="email" class="form-input" placeholder="your@email.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Phone Number</label>
+                        <input type="tel" name="phone" class="form-input" placeholder="(555) 123-4567" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">What's the best time to reach you?</label>
+                        <select name="best_time" class="form-select" required>
+                            <option value="">Select...</option>
+                            <option value="morning">Morning (8am-12pm)</option>
+                            <option value="afternoon">Afternoon (12pm-5pm)</option>
+                            <option value="evening">Evening (5pm-8pm)</option>
+                            <option value="anytime">Anytime</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <button type="button" class="btn btn-back" onclick="prevStep()">Back</button>
+                        <button type="button" class="btn btn-next" onclick="nextStep()">Next: Confirmation</button>
+                    </div>
+                </div>
+                
+                <!-- Step 5: Confirmation -->
+                <div class="form-step" data-step="5">
+                    <h2 class="step-title">One Last Question</h2>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Are you ready to commit to the 30-day process if accepted?</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="commitment" value="ready" required>
+                                <span>Yes, I'm ready to move forward</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="commitment" value="need_info" required>
+                                <span>I need more information first</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="commitment" value="exploring" required>
+                                <span>I'm just exploring options</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">How did you hear about the 30-Day Seller Advantage Program?</label>
+                        <select name="referral_source" class="form-select" required>
+                            <option value="">Select...</option>
+                            <option value="google">Google search</option>
+                            <option value="facebook_instagram">Facebook/Instagram ad</option>
+                            <option value="referral">Referral from a friend</option>
+                            <option value="netflix">Saw Bryan on Netflix's Owning Manhattan</option>
+                            <option value="real_estate_site">Real estate website (Zillow, Realtor.com, etc.)</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="consent" name="consent" required>
+                        <label for="consent" class="checkbox-label">I agree to receive communication from Serhant Real Estate regarding my application. I understand I can unsubscribe at any time.</label>
+                    </div>
+                    
+                    <div class="trust-badges">
+                        <div class="trust-badge-item">
+                            <i class="fas fa-lock"></i>
+                            <span>Your information is 100% confidential</span>
+                        </div>
+                        <div class="trust-badge-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Average response time: 24 hours</span>
+                        </div>
+                        <div class="trust-badge-item">
+                            <i class="fas fa-phone"></i>
+                            <span>No pressure. No obligation.</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <button type="button" class="btn btn-back" onclick="prevStep()">Back</button>
+                        <button type="submit" class="btn btn-next">Submit My Application</button>
+                    </div>
+                </div>
+                
+            </form>
+        </div>
+        
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-card">
+                <h3 class="sidebar-title">What Happens After You Apply?</h3>
+                <div class="sidebar-steps">
+                    <div class="sidebar-step">
+                        <div class="sidebar-icon">📋</div>
+                        <div class="sidebar-step-content">
+                            <h4>We Review Your Application</h4>
+                            <p>Our team will review your property details and timeline to determine if you're a fit for the program.</p>
+                        </div>
+                    </div>
+                    <div class="sidebar-step">
+                        <div class="sidebar-icon">📞</div>
+                        <div class="sidebar-step-content">
+                            <h4>We Reach Out Within 24 Hours</h4>
+                            <p>If you're a fit, we'll call or email to schedule a 30-minute strategy session.</p>
+                        </div>
+                    </div>
+                    <div class="sidebar-step">
+                        <div class="sidebar-icon">🚀</div>
+                        <div class="sidebar-step-content">
+                            <h4>We Build Your Custom 30-Day Plan</h4>
+                            <p>On the strategy call, we'll walk through your home's readiness and create a custom plan to sell with certainty.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sidebar-card">
+                <div class="testimonial-box">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"The application process was simple, and Bryan called me the next day. Within a week, we had a plan. Within a month, we had a sale."</p>
+                    <p class="testimonial-author">— Karen Rodriguez, Port Washington, NY</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let currentStep = 1;
+        const totalSteps = 5;
+        
+        function nextStep() {
+            if (validateCurrentStep()) {
+                if (currentStep < totalSteps) {
+                    currentStep++;
+                    updateForm();
+                }
+            }
+        }
+        
+        function prevStep() {
+            if (currentStep > 1) {
+                currentStep--;
+                updateForm();
+            }
+        }
+        
+        function updateForm() {
+            // Hide all steps
+            document.querySelectorAll('.form-step').forEach(step => {
+                step.classList.remove('active');
+            });
+            
+            // Show current step
+            document.querySelector(`.form-step[data-step="${currentStep}"]`).classList.add('active');
+            
+            // Update progress bar
+            document.querySelectorAll('.progress-step').forEach((step, index) => {
+                step.classList.remove('active', 'completed');
+                if (index + 1 < currentStep) {
+                    step.classList.add('completed');
+                } else if (index + 1 === currentStep) {
+                    step.classList.add('active');
+                }
+            });
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        function validateCurrentStep() {
+            const currentStepElement = document.querySelector(`.form-step[data-step="${currentStep}"]`);
+            const requiredFields = currentStepElement.querySelectorAll('[required]');
+            
+            for (let field of requiredFields) {
+                if (!field.value) {
+                    field.focus();
+                    alert('Please fill in all required fields.');
+                    return false;
+                }
+            }
+            
+            return true;
+        }
+        
+        function showConditionalFields() {
+            document.getElementById('conditionalFields').style.display = 'block';
+        }
+        
+        function hideConditionalFields() {
+            document.getElementById('conditionalFields').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

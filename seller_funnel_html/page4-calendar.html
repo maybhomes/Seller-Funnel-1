@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book your strategy session with Bryan May">
+    <title>Book Your Strategy Session | Serhant Real Estate</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .checkmark {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: white;
+            color: #28a745;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            margin: 0 auto 30px;
+            animation: scaleIn 0.5s ease-out;
+        }
+        
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+        
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* What to Expect Section */
+        .expect-section {
+            padding: 80px 20px;
+            background: white;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 40px;
+            font-weight: 700;
+            color: #000033;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+        
+        .three-col {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .col-item {
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        .col-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .col-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #000033;
+            margin-bottom: 15px;
+        }
+        
+        .col-text {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* Calendar Section */
+        .calendar-section {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+        
+        .calendar-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .calendar-placeholder {
+            background: #e9ecef;
+            border: 2px dashed #adb5bd;
+            border-radius: 10px;
+            padding: 60px 40px;
+            text-align: center;
+            color: #666;
+        }
+        
+        .calendar-placeholder h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: #000033;
+            margin-bottom: 15px;
+        }
+        
+        .calendar-placeholder p {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+        
+        .calendar-placeholder code {
+            background: #fff;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-family: monospace;
+            color: #C5A059;
+        }
+        
+        .trust-badge {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 16px;
+            color: #28a745;
+            font-weight: 700;
+        }
+        
+        /* Next Steps Section */
+        .next-steps {
+            padding: 80px 20px;
+            background: white;
+        }
+        
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .step-item {
+            text-align: center;
+            padding: 30px 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #C5A059;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+        
+        .step-icon {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        
+        .step-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #000033;
+            margin-bottom: 10px;
+        }
+        
+        .step-text {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .stars {
+            color: #FFD700;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-text {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            color: #000033;
+            font-size: 14px;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 20px;
+            background: white;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: #f8f9fa;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        
+        .faq-question {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #000033;
+            margin-bottom: 10px;
+        }
+        
+        .faq-answer {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #C5A059 0%, #d4af6a 100%);
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 44px;
+            color: white;
+            margin-bottom: 15px;
+        }
+        
+        .cta-section p {
+            font-size: 20px;
+            color: white;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #000033;
+            color: white;
+            padding: 20px 50px;
+            font-size: 22px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+        
+        /* Bio Section */
+        .bio-section {
+            padding: 80px 20px;
+            background: white;
+        }
+        
+        .bio-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .bio-images {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .bio-image {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .bio-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: #000033;
+            margin-bottom: 20px;
+        }
+        
+        .bio-text p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .bio-highlight {
+            background: #f8f9fa;
+            padding: 20px;
+            border-left: 4px solid #C5A059;
+            margin: 20px 0;
+            font-style: italic;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #000033;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .footer-logo {
+            height: 50px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-contact {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+        
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .social-icon {
+            color: #C5A059;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+        
+        .social-icon:hover {
+            color: #d4af6a;
+        }
+        
+        .footer-legal {
+            font-size: 12px;
+            color: #777;
+            margin-top: 20px;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .three-col {
+                grid-template-columns: 1fr;
+            }
+            
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .bio-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .cta-section h2 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="checkmark">✓</div>
+            <h1>Application Received—Let's Schedule Your Strategy Session</h1>
+            <p>We'll review your application and reach out within 24 hours. In the meantime, secure your spot for a <strong>30-minute strategy call</strong> with Bryan May.</p>
+        </div>
+    </section>
+    
+    <!-- What to Expect Section -->
+    <section class="expect-section">
+        <div class="container">
+            <h2 class="section-title">What Happens on the Strategy Session?</h2>
+            <p class="section-subtitle">This is not a sales pitch. It's a <strong>strategic audit</strong> to determine if your home is ready to command a premium price.</p>
+            
+            <div class="three-col">
+                <div class="col-item">
+                    <div class="col-icon">🏠</div>
+                    <h3 class="col-title">Readiness Audit</h3>
+                    <p class="col-text">We'll walk through your property (virtually or in-person) with "buyer eyes" to identify the exact improvements that will yield 3x-5x returns.</p>
+                </div>
+                <div class="col-item">
+                    <div class="col-icon">📊</div>
+                    <h3 class="col-title">Pricing Analysis</h3>
+                    <p class="col-text">We'll review active competition and recent sales to find the "sweet spot" that drives multiple offers without leaving money on the table.</p>
+                </div>
+                <div class="col-item">
+                    <div class="col-icon">📅</div>
+                    <h3 class="col-title">Custom Timeline</h3>
+                    <p class="col-text">We'll build a reverse-engineered calendar from your ideal closing date back to today, so you know exactly what to do and when.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Calendar Section -->
+    <section class="calendar-section">
+        <div class="container">
+            <h2 class="section-title">Book Your 30-Minute Strategy Session Now</h2>
+            <p class="section-subtitle">Select a time that works for you. We'll send you a confirmation email with all the details.</p>
+            
+            <div class="calendar-container">
+                <div class="calendar-placeholder">
+                    <h3>📅 Embed Your Calendar Here</h3>
+                    <p>Replace this section with your Calendly, Acuity, or other booking system embed code.</p>
+                    <p style="margin-top: 20px;"><strong>Example Calendly embed:</strong></p>
+                    <p><code>&lt;div class="calendly-inline-widget" data-url="https://calendly.com/yourname/30min"&gt;&lt;/div&gt;</code></p>
+                    <p style="margin-top: 20px; font-size: 14px; color: #999;">Available times: Monday-Friday, 9am-6pm EST</p>
+                </div>
+                
+                <div class="trust-badge">
+                    ✅ No pressure. No obligation. Just clarity.
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- What Happens Next Section -->
+    <section class="next-steps">
+        <div class="container">
+            <h2 class="section-title">What Happens After You Book?</h2>
+            
+            <div class="steps-grid">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">📧</div>
+                    <h3 class="step-title">You'll Receive a Confirmation Email</h3>
+                    <p class="step-text">Check your inbox for a confirmation email with the date, time, and Zoom link (or address for in-person meetings).</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">📝</div>
+                    <h3 class="step-title">We'll Review Your Application</h3>
+                    <p class="step-text">Our team will review your property details and prepare a custom strategy for your call.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">📞</div>
+                    <h3 class="step-title">We'll Meet for 30 Minutes</h3>
+                    <p class="step-text">On the call, we'll walk through your home's readiness, pricing strategy, and custom 30-day plan.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">🚀</div>
+                    <h3 class="step-title">You'll Decide If It's a Fit</h3>
+                    <p class="step-text">If we both agree it's a fit, we'll move forward with the Launch Readiness Timeline. If not, no hard feelings.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">What Our Sellers Are Saying</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"The strategy session was incredibly valuable. Bryan walked through our home and identified three simple changes that made a huge difference. We sold for $18,000 over asking."</p>
+                    <p class="testimonial-author">— Karen & Tom Rodriguez, Port Washington, NY</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"I was skeptical at first, but the strategy session proved that Bryan knows what he's doing. He showed us comps, explained the pricing strategy, and gave us a clear timeline. We felt confident from day one."</p>
+                    <p class="testimonial-author">— Michael Chen, Great Neck, NY</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"The strategy session alone was worth it. Bryan helped us see our home through a buyer's eyes and gave us a punch list of improvements. We made $12,000 in upgrades and sold for $35,000 over asking."</p>
+                    <p class="testimonial-author">— Lisa & David Thompson, Roslyn, NY</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <p class="faq-question">Q: Is the strategy session free?</p>
+                    <p class="faq-answer">A: Yes. The strategy session is 100% free with no obligation. We only move forward if we both agree it's a fit.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-question">Q: What if I can't make any of the available times?</p>
+                    <p class="faq-answer">A: No problem. Email us at bryan@serhant.com or call 516.314.4098, and we'll find a time that works for you.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-question">Q: Will this be a high-pressure sales call?</p>
+                    <p class="faq-answer">A: No. This is a strategic audit, not a sales pitch. We'll walk through your home's readiness and give you a clear plan. If it's a fit, great. If not, no hard feelings.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-question">Q: Do I need to prepare anything for the call?</p>
+                    <p class="faq-answer">A: Not required, but helpful: Have photos of your home ready, know your ideal timeline, and think about any concerns or questions you have about selling.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-question">Q: What if I'm not ready to sell right now?</p>
+                    <p class="faq-answer">A: That's okay. The strategy session will still give you clarity on what to do when you're ready. We can also create a longer-term plan if you're selling 6-12 months from now.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Limited Availability: Book Your Spot Now</h2>
+            <p>We only take on <strong>4 new clients per month</strong> to ensure we can deliver the white-glove service and strategic execution you deserve. Strategy session spots fill up fast. <strong>Book yours now</strong> to avoid waiting weeks for the next available slot.</p>
+            <a href="#calendar" class="cta-button">Book Your Strategy Session Now</a>
+        </div>
+    </section>
+    
+    <!-- Bio Section -->
+    <section class="bio-section">
+        <div class="container">
+            <h2 class="section-title">Meet Bryan May: Your Long Island Advantage</h2>
+            <div class="bio-content">
+                <div class="bio-images">
+                    <img src="images/maxandIheadshot.jpg" alt="Bryan May" class="bio-image">
+                    <img src="images/RyanandISMALL.jpg" alt="Bryan May with Ryan Serhant" class="bio-image">
+                </div>
+                <div class="bio-text">
+                    <p>Bryan May is a seasoned real estate expert with <strong>over 20 years in the industry</strong> and more than <strong>$250 million in closed transactions</strong>.</p>
+                    <p>He's guided buyers and sellers through every major market shift:</p>
+                    <ul style="margin-left: 20px; margin-bottom: 15px;">
+                        <li>The 2007 housing boom and the crash of 2008</li>
+                        <li>The Brooklyn "hipster gold rush" between 2012–2015</li>
+                        <li>The historic low-rate frenzy during the COVID-19 pandemic</li>
+                    </ul>
+                    <p>Now in 2026, as the market reaches a new kind of standoff—where many sellers feel unsure, overwhelmed, or priced out—Bryan continues to help clients win using a system he personally developed: <strong>The 30-Day Seller Advantage Program</strong>.</p>
+                    <div class="bio-highlight">
+                        <p><strong>Bryan's mission is simple:</strong> To make sure more people go from stressed-out sellers to relieved ones.</p>
+                    </div>
+                    <p style="font-size: 14px; color: #999; margin-top: 20px;"><em>Photo: Bryan May with Ryan Serhant, Founder of Serhant Real Estate</em></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Final CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Sell with Certainty?</h2>
+            <p>Book your 30-minute strategy session now. No pressure. No obligation. Just clarity.</p>
+            <a href="#calendar" class="cta-button">Book Your Strategy Session Now</a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <img src="images/serhantlogo.png" alt="Serhant Logo" class="footer-logo">
+                <div class="footer-contact">
+                    <p><strong>Bryan May</strong> | Licensed Real Estate Salesperson</p>
+                    <p>Long Island, NY</p>
+                    <p>Phone: 516.314.4098</p>
+                    <p>Email: bryan@serhant.com</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/bryanmayrealestate" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="mailto:bryan@serhant.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+                    <a href="tel:5163144098" class="social-icon"><i class="fas fa-phone"></i></a>
+                </div>
+                <div class="footer-legal">
+                    <p>© 2026 Serhant Real Estate. All Rights Reserved.</p>
+                    <p>Privacy Policy | Terms of Service</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
